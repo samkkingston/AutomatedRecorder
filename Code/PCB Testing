@@ -1,0 +1,80 @@
+/*
+ A simple test that activates and deactivates relays 1 through 8 for a half second each
+followed by all of them in unison for a second and a half. Meant to help diagnose connection issues and voltage regulation.
+
+Reference circuit for pinout and connections.
+*/
+void setup() {
+  
+  //SET ALL RELAY CONTROL PINS TO OUTPUT
+  pinMode(43, OUTPUT); //RELAY 1
+  pinMode(41, OUTPUT); //RELAY 2
+  pinMode(39, OUTPUT); //RELAY 3
+  pinMode(37, OUTPUT); //RELAY 4
+  pinMode(36, OUTPUT); //RELAY 5
+  pinMode(38, OUTPUT); //RELAY 6
+  pinMode(40, OUTPUT); //RELAY 7
+  pinMode(42, OUTPUT); //RELAY 8 - Used for Breath-Not activated in this example.
+}
+
+
+void loop() {
+  digitalWrite(43, HIGH);   //Set Relay 1 High
+  delay(500);                       
+  digitalWrite(43, LOW);    //Set Relay 1 Low
+  delay(500); 
+  digitalWrite(41, HIGH);   //Set Relay 2 High
+  delay(500);                       
+  digitalWrite(41, LOW);    //Set Relay 2 Low
+  delay(500);  
+  digitalWrite(39, HIGH);   //Set Relay 3 High
+  delay(500);                       
+  digitalWrite(39, LOW);    //Set Relay 3 Low
+  delay(500);  
+  digitalWrite(37, HIGH);   //Set Relay 4 High
+  delay(500);                       
+  digitalWrite(37, LOW);    //Set Relay 4 Low
+  delay(500);  
+  digitalWrite(36, HIGH);   //Set Relay 5 High
+  delay(500);                       
+  digitalWrite(36, LOW);    //Set Relay 5 Low
+  delay(500);  
+  digitalWrite(38, HIGH);   //Set Relay 6 High
+  delay(500);                       
+  digitalWrite(38, LOW);    //Set Relay 6 Low
+  delay(500);  
+  digitalWrite(40, HIGH);   //Set Relay 7 High
+  delay(500);                       
+  digitalWrite(40, LOW);    //Set Relay 7 Low
+  delay(500);  
+
+  //THE FOLLOWING CONTROLS SOLENOID 8-BREATH CONTROL.
+  /*
+  digitalWrite(42, HIGH);   
+  delay(500);                       
+  digitalWrite(42, LOW);    
+  delay(500);  
+  
+*/
+
+//SET RELAYS 1-7 HIGH FOR 1.5 SECONDS
+  digitalWrite(43, HIGH);
+  digitalWrite(41, HIGH);
+  digitalWrite(39, HIGH);
+  digitalWrite(37, HIGH);
+  digitalWrite(36, HIGH);
+  digitalWrite(38, HIGH);
+  digitalWrite(40, HIGH);
+  delay(1500); 
+  
+  //SET RELAYS 1-7 LOW FOR 1.5 SECONDS
+  digitalWrite(43, LOW);
+  digitalWrite(41, LOW);
+  digitalWrite(39, LOW);
+  digitalWrite(37, LOW);
+  digitalWrite(36, LOW);
+  digitalWrite(38, LOW);
+  digitalWrite(40, LOW);
+  
+  delay(1500);
+}
