@@ -1,5 +1,5 @@
 /*
- A simple test that activates and deactivates relays 1 through 8 for a half second each
+ A simple test that activates and deactivates relays 1 through 7 for a half second each
 followed by all of them in unison for a second and a half. Meant to help diagnose connection issues and voltage regulation.
 
 Reference circuit for pinout and connections.
@@ -14,7 +14,7 @@ void setup() {
   pinMode(36, OUTPUT); //RELAY 5
   pinMode(38, OUTPUT); //RELAY 6
   pinMode(40, OUTPUT); //RELAY 7
-  pinMode(42, OUTPUT); //RELAY 8 - Used for Breath-Not activated in this example.
+  pinMode(42, OUTPUT); //RELAY 8 - Used for Breath-Not used in this example.
 }
 
 
